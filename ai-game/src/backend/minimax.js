@@ -6,6 +6,10 @@ app.use(express.json());
 
 app.use(cors({ origin: 'http://localhost:5173' }));
 
+app.use(express.static(path.join(__dirname, '../../dist'))); //serve static file from react
+app.get('*', (req,res) => {res.sendFile(path.resolve(__dirname,'../../dist','index.html'))});
+
+
 const isSquareFull=(currentBoard) =>
 {
     for(let square=0; square<currentBoard.length;square++)
@@ -169,5 +173,5 @@ const movebyAI=findbestposition(currentBoard1);
 
 );
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
