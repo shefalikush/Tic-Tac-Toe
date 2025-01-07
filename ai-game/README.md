@@ -1,8 +1,18 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Tic-Tac-Toe with AI
+
+### This project is an implmentation of Tic-Tac-toe game integrated with AI. This game allows user to play with AI player 'O', which is powered by "Minimax Algorithm".
+
+### This game is a single -player mode.
+
+### Technologies used-
+- **Frontend**-React
+- **Backend** - Node.js, Express.js, Restful API
+- **AI logic** -minimax algorithm
+
+
+to run the backend ->go to backend and run node minimax.js
+to run the React ->run npm run dev
