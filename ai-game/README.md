@@ -17,7 +17,6 @@ to run the backend ->go to backend and run node minimax.js
 to run the React ->run npm run dev
 
 ### Demo
-[Click here to watch the demo](Play Tic-tac-Toe.mp4)
 
 <video controls>
-<source src="Play Tic-tac-Toe.mp4" type="Play Tic-tac-Toe.mp4"></source>
+<source src="video/PlayGame.mp4" type="video/mp4"></source>
