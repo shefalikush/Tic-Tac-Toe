@@ -6,22 +6,11 @@ app.use(express.json());
 
 app.use(cors({ origin: 'http://localhost:5173' }));
 
-app.use(express.static(path.join(__dirname, '../../dist'))); //serve static file from react
-app.get('*', (req,res) => {res.sendFile(path.resolve(__dirname,'../../dist','index.html'))});
+// app.use(express.static(path.join(__dirname, '../../dist'))); //serve static file from react
+// app.get('*', (req,res) => {res.sendFile(path.resolve(__dirname,'../../dist','index.html'))});
 
 
-const isSquareFull=(currentBoard) =>
-{
-    for(let square=0; square<currentBoard.length;square++)
-    {
-        if(currentBoard[square]===null)
-        {
-        return false;
-        }
 
-    }
-    return true;
-};
 
 const staticEvaluation=(currentBoard)=>
 {
@@ -39,10 +28,22 @@ const staticEvaluation=(currentBoard)=>
     
 };
 
+const isSquareFull=(currentBoard) =>
+    {
+        for(let square=0; square<currentBoard.length;square++)
+        {
+            if(currentBoard[square]===null)
+            {
+            return false;
+            }
+    
+        }
+        return true;
+    };
 const minimax=(currentBoard,minimaxPlayer)=>
 {
     const winner = declareWinner(currentBoard);
-    if(winner || isSquareFull(currentBoard))
+    if(isSquareFull(currentBoard || winner))
         return staticEvaluation(currentBoard);
 
     
@@ -133,7 +134,6 @@ app.post('/nextMove', (req, res) => {
 const { currentBoard, currentplayer } = req.body;
 
 
-console.log('Received game state:', { currentBoard, currentplayer }); 
 currentBoard1=currentBoard;
 currentplayer1=currentplayer;
 let Draw=false;
